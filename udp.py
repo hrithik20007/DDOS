@@ -4,7 +4,7 @@ import socket
 import threading
 
 ip=input("Enter the IP: ")
-port=int(input("Enter the desired port for all ports or press -1 for all ports: "))
+port=int(input("Enter the desired port or press -1 for all ports: "))
 threads=int(input("Enter the number of threads: "))
 
 #socket connection provides two nodes, one to listen on and the other to connect.AF_INET indicates ipv4 while SOCK_DGRAM indicates UDP connection.
