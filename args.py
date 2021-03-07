@@ -8,6 +8,7 @@ import argparse
 a=argparse.ArgumentParser()
 a.add_argument("-i", help="Enter the IP address")
 a.add_argument("-d", help="Enter the domain")
+a.add_argument("-f", help="Enter your fake IP")
 a.add_argument("-p", help="Enter port number (-1 for all ports only for UDP)")
 a.add_argument("-t", help="Enter number of threads")
 a.add_argument("-w", help="Enter either TCP or UDP")
@@ -15,6 +16,7 @@ args=a.parse_args()
 
 ip=args.i
 domain=args.d
+fake_ip=args.f
 port=int(args.p)
 threads=int(args.t)
 pro=args.w
@@ -24,17 +26,17 @@ protocol=str(pro).lower()
 if domain != None:
     ip2= socket.gethostbyname(domain)
 
-elif (ip==None and domain==None):
+if (ip==None and domain==None):
     print("You may have missed to mention either IP or Domain. You should do --")
     print("python3 args.py -h")
     sys.exit(0)
 
-elif (port==None or threads==None):
+if (port==None or threads==None):
     print("You may have missed some essential parameters like port or threads. You should do --")
     print("python3 args.py -h")
     sys.exit(0) 
 
-elif (protocol != "udp" or protocol != "tcp"):
+if not (protocol!='udp' or protocol!='tcp'):
     print("The protocol you mentioned is neither UDP or TCP. You should do --")
     print("python3 args.py -h")
     sys.exit(0)
