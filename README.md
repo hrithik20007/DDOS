@@ -11,5 +11,5 @@
 ```
 git clone https://github.com/hrithik20007/DDOS.git
 cd DDOS
-python3 <the script you want to run(the args.py script will need extra parameters; use -h after it for help.)>
+python3 <the script you want to run(the args.py script will need extra parameters; use -h after it for help)>
 ```
